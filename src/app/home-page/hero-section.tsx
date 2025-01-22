@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Image Section */}
-      <div className="flex justify-center items-center px-4 py-0 pb-4">
+      <div className="flex justify-center items-center px-6 py-2 pb-4">
         <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] max-w-[1344px]">
           {/* Hero Banner Image */}
           <Image

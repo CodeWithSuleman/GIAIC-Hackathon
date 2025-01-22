@@ -1,10 +1,52 @@
+"use client"
+
 import { FaHeart, FaShoppingBag, FaSearch } from 'react-icons/fa'; // Importing icons from React Icons
 import Frame from '@/app/assets/Frame.png'; // Importing a frame image asset
 import Image from 'next/image'; // Importing Image component from Next.js for optimized image rendering
 import Link from 'next/link'; // Importing Link component from Next.js for navigation
 import Logo from '@/app/assets/logo.png'; // Importing the logo image asset
+import { useEffect, useState } from 'react';
+import { client } from '@/sanity/lib/client';
+import { groq } from 'next-sanity';
+import { Products } from '../../../types/products';
+
+
+
+interface Product {
+  _id: string;
+  productName: string;
+  category: string;
+}
 
 export default function Header() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<Products[]>([]);
+  const [data, setData] = useState<Products[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await client.fetch(
+        groq`*[_type == "product"]{ 
+          _id, 
+          productName, 
+          category 
+        }`
+      );
+      setData(result);
+    };
+
+    fetchData();
+  }, []);
+
+  const handleSearch = (event: { target: { value: string; }; })=>{
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query)
+    
+    const filterResults = data.filter((item)=>item.productName.toLowerCase().includes(query));
+    setSearchResults(filterResults)
+  }
+
+
   return (
     <header className=''>
       {/* Top bar */}
@@ -51,8 +93,23 @@ export default function Header() {
               type="text"
               placeholder="Search"
               className="border border-gray-300 rounded-full pl-4 pr-10 py-2 text-sm focus:outline-none"
+              value={searchQuery}
+              onChange={handleSearch}
             />
             <FaSearch className="absolute right-3 top-2.5 text-gray-500" /> {/* Search icon */}
+            {searchQuery && (
+            <div className="absolute bg-white border border-gray-300 rounded-lg shadow-md mt-2 w-full">
+              {searchResults.length > 0 ? (
+                searchResults.map((item) => (
+                  <div key={item._id} className="p-2 hover:bg-gray-100 cursor-pointer">
+                    {item.productName} - {item.category}
+                  </div>
+                ))
+              ) : (
+                <p className="p-2 text-gray-500">No results found.</p>
+              )}
+            </div>
+          )}
           </div>
           {/* Wishlist icon */}
           <FaHeart className="text-gray-700 md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[16px] h-[16px] cursor-pointer hover:text-black" />
