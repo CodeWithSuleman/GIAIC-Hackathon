@@ -40,10 +40,10 @@ export default function Header() {
 
   const handleSearch = (event: { target: { value: string; }; })=>{
     const query = event.target.value.toLowerCase();
-    setSearchQuery(query);
+    setSearchQuery(query)
     
     const filterResults = data.filter((item)=>item.productName.toLowerCase().includes(query));
-    setSearchResults(filterResults);
+    setSearchResults(filterResults)
   }
 
 
