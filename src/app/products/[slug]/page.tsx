@@ -30,10 +30,10 @@ export default async function ProductPage({params}:productPageProps){
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center px-4 sm:px-6 lg:px-12 py-8">
           {/* Product Image */}
           <div className="w-full max-w-sm">
-            {product.image && (
+            {product?.image && (
               <img
                 src={urlFor(product.image).url()}
-                alt={product.productName}
+                alt={product?.productName}
                 className="w-full h-auto object-contain"
               />
             )}
@@ -41,9 +41,9 @@ export default async function ProductPage({params}:productPageProps){
     
           {/* Product Details */}
           <div className="mt-6 lg:mt-0 lg:ml-10 text-center lg:text-left">
-            <h1 className="text-2xl font-bold mb-4">{product.productName}</h1>
-            <p className="text-gray-600 mb-6">{product.description}</p>
-            <p className="text-lg font-semibold mb-6">Rs {product.price}</p>
+            <h1 className="text-2xl font-bold mb-4">{product?.productName}</h1>
+            <p className="text-gray-600 mb-6">{product?.description}</p>
+            <p className="text-lg font-semibold mb-6">Rs {product?.price}</p>
             <Link href="/cart">
             <button className="px-6 py-3 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-all">
               Add to Cart
