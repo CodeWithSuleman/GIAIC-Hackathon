@@ -35,8 +35,8 @@ export default async function ProductPage({params}:productPageProps){
               <Image
                 src={urlFor(product.image).url()}
                 alt={product?.productName}
-                width={190}
-                height={190}
+                width={200}
+                height={200}
                 className="w-full h-auto object-contain"
               />
             )}
