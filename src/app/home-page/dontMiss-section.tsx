@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import DontMissBanner from '@/app/assets/dontmiss-section.png';
 import Link from "next/link";
 

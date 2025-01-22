@@ -2,7 +2,7 @@
 
 import { FaHeart, FaShoppingBag, FaSearch } from 'react-icons/fa'; // Importing icons from React Icons
 import Frame from '@/app/assets/Frame.png'; // Importing a frame image asset
-import Image from 'next/image'; // Importing Image component from Next.js for optimized image rendering
+import Image from "next/legacy/image"; // Importing Image component from Next.js for optimized image rendering
 import Link from 'next/link'; // Importing Link component from Next.js for navigation
 import Logo from '@/app/assets/logo.png'; // Importing the logo image asset
 import { useEffect, useState } from 'react';

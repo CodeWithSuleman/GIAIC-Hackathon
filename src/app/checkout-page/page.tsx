@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { BsChatRightText } from "react-icons/bs";
 import { IoLockClosedOutline } from "react-icons/io5";
 import Product2 from "@/app/assets/product2.png";

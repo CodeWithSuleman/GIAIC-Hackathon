@@ -2,7 +2,7 @@ import Product4 from '@/app/assets/product4.png'
 import Product1 from '@/app/assets/product1.png'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link';
 export default function Cart() {
   return (

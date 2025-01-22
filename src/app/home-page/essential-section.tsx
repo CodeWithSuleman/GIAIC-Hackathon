@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import EssentialsImage1 from '@/app/assets/essential1.png';
 import EssentialsImage2 from '@/app/assets/essential2.png';
 import EssentialsImage3 from '@/app/assets/essential3.png';

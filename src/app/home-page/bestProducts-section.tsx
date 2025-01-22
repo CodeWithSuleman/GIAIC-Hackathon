@@ -1,7 +1,7 @@
 "use client";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Importing icons for navigation
-import Image from "next/image"; // Importing Next.js optimized Image component
+import Image from "next/legacy/image"; // Importing Next.js optimized Image component
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Products } from "../../../types/products";

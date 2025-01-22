@@ -1,4 +1,4 @@
-import Image from "next/image"; // Importing Next.js Image component for optimized image rendering
+import Image from "next/legacy/image"; // Importing Next.js Image component for optimized image rendering
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Importing Chevron icons from react-icons for navigation
 import Product1 from '@/app/assets/product1.png'; // Importing product images
 import Product2 from '@/app/assets/product2.png';

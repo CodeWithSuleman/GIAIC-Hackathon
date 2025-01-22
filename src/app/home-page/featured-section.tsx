@@ -1,4 +1,4 @@
-import Image from "next/image"; // Importing Next.js optimized Image component
+import Image from "next/legacy/image"; // Importing Next.js optimized Image component
 import FeaturedImage from '@/app/assets/featured-image.png'; // Importing the featured image
 
 export default function Featured() {

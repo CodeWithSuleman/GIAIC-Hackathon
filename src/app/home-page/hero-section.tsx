@@ -1,4 +1,4 @@
-import Image from 'next/image'; // Importing Next.js Image component for optimized image handling
+import Image from "next/legacy/image"; // Importing Next.js Image component for optimized image handling
 import HeroBanner from '@/app/assets/hero-image.png'; // Importing hero banner image
 import Link from 'next/link';
 
