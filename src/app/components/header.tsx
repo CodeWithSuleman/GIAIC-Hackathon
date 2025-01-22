@@ -8,7 +8,7 @@ import Logo from '@/app/assets/logo.png'; // Importing the logo image asset
 import { useEffect, useState } from 'react';
 import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
-import { Products } from '../../../types/products';
+// import { Products } from '../../../types/products';
 
 
 
@@ -20,8 +20,8 @@ interface Product {
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<Products[]>([]);
-  const [data, setData] = useState<Products[]>([]);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,12 +66,12 @@ export default function Header() {
       {/* Main navigation */}
       <div className="flex flex-wrap justify-between items-center px-6 py-4">
         {/* Left section: Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center md:w-[68px] sm:w-[50px] w-[20px]">
           <Link href="/">
           <Image
             src={Logo}
             alt="Nike Logo"
-            className="md:w-[78px] sm:w-[60px] w-[30px]" // Responsive logo size
+            className="md:w-[68px] sm:w-[50px] w-[20px]" // Responsive logo size
           /></Link>
         </div>
 

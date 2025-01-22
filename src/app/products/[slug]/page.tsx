@@ -3,6 +3,7 @@ import { Products } from "../../../../types/products";
 import { groq } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
+import Image from "next/image";
 
 interface productPageProps{
     params:Promise<{slug:string}>
@@ -31,9 +32,11 @@ export default async function ProductPage({params}:productPageProps){
           {/* Product Image */}
           <div className="w-full max-w-sm">
             {product?.image && (
-              <img
+              <Image
                 src={urlFor(product.image).url()}
                 alt={product?.productName}
+                width={200}
+                height={200}
                 className="w-full h-auto object-contain"
               />
             )}
