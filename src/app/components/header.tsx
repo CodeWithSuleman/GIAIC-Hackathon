@@ -52,7 +52,7 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-primaryColor flex justify-between items-center px-6 py-2 md:text-[11px] sm:text-[9px] text-[8px] font-medium text-gray-500">
         {/* Left section: Frame icon */}
-        <Image src={Frame} alt={''} width={24} height={24} />
+        <Image src={Frame} alt={''} width={25} height={25} />
 
         {/* Right section: Top navigation links */}
         <div className="flex md:gap-4 sm:gap-3 gap-2">
