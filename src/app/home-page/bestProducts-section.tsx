@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Importing ico
 import Image from "next/legacy/image"; // Importing Next.js optimized Image component
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Products } from "../../../types/products";
+import { Products } from "@/types/products";
 import { client } from "@/sanity/lib/client";
 import { fourProducts } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";

@@ -16,4 +16,5 @@ export interface Products{
         _type:"slug";
         current: string;
     }
+    inventory:number;
 }

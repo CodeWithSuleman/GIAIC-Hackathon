@@ -2,7 +2,7 @@
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Products } from '../../../types/products';
+import { Products } from '@/types/products';
 import { client } from '@/sanity/lib/client';
 import { allProducts, productsCategory } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/image';
